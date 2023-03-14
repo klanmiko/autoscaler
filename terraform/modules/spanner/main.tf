@@ -71,7 +71,7 @@ resource "google_spanner_instance_iam_member" "poller_get_metadata_iam" {
 
 # Limited role
 resource "google_project_iam_custom_role" "capacity_manager_iam_role" {
-  role_id     = "spannerAutoscalerCapacityManager"
+  role_id     = "spannerAutoscalerCapacityManager2" # to prevent undelete role issue
   title       = "Spanner Autoscaler Capacity Manager Role"
   description = "Allows a principal to scale spanner instances"
   permissions = ["spanner.instanceOperations.get", "spanner.instances.update"]
